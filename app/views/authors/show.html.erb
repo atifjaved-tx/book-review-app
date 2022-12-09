@@ -1,0 +1,22 @@
+
+<h1>Book name:<br><%= @author.bookname %></h1>
+<!-- <br> -->
+<h2>Author name:<br><%= @author.authorname %></h2>
+
+<h2>Book image:<br> <%= @author.image %></h2>
+
+<% if @author.image.attached? %>
+    <img src="<%=(url_for(@author.image))%>">
+    <% end %>
+  
+
+
+<ul>
+  <li><%= link_to "Edit", edit_author_path(@author) %></li>
+  <li><%= link_to "Destroy", author_path(@author), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+

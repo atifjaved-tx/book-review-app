@@ -11,6 +11,17 @@
   </head>
 
   <body>
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+
     <%= yield %>
+
+<!-- 
+    <%= button_to(
+  "Log Out",
+  destroy_user_session_path,
+  method: :delete
+) %>s -->
   </body>
 </html>

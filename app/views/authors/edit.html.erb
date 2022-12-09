@@ -1,0 +1,25 @@
+	<h1>EDIT BOOKS</h1>
+
+<%= form_with model: @author do |form| %>
+  <div>
+    <%= form.label :bookname %><br>
+    <%= form.text_field :bookname %>
+  </div>
+
+  <div>
+    <%= form.label :authorname %><br>
+    <%= form.text_field :authorname %>
+  </div>
+
+
+  <div>
+
+  <%= form.label :"image"%><br>
+  <%= form.file_field :image %>
+</div>
+<br>
+
+  <div>
+    <%=form.submit "Update book" %>
+  </div>
+<% end %>
