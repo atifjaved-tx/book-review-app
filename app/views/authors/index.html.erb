@@ -1,2 +1,29 @@
-<h1>Authors#index</h1>
-<p>Find me in app/views/authors/index.html.erb</p>
+<h1>BOOKS</h1>
+
+<ul>
+  <% @author.each do |authors| %>
+    <li>
+      <h1> Book name:<br><%= authors.bookname %></h1><br>
+      <br>
+     <h2> Author name:<br> <%= authors.authorname%></h2><br>
+    </li>
+    <br>
+    <li>
+      <h4>Book image</h4>
+      <%= image_tag(url_for(authors.image)) %>
+    </li>
+    
+
+  <% end %>
+
+</ul>
+
+<%= link_to "Create a new book", "/authors/new" %>
+<br>
+
+<% if user_signed_in? %> 
+ <div> Welcome <%= current_user.email %> </div> 
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %> 
+<% end %>
