@@ -3,17 +3,32 @@
 <!-- <br> -->
 <h2>Author name:<br><%= @author.authorname %></h2>
 
-<h2>Book image:<br> <%= @author.image %></h2>
 
-<% if @author.image.attached? %>
-    <img src="<%=(url_for(@author.image))%>">
-    <% end %>
+
+    <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="<%=(url_for(@author.image))%>" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">images</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+    <br>
+
+     <%= link_to "Write a Review", new_review_path(@author) %>
   
 
 
 <ul>
-  <li><%= link_to "Edit", edit_author_path(@author) %></li>
-  <li><%= link_to "Destroy", author_path(@author), data: {
+  <li><%= link_to "Edit book", edit_author_path(@author) %></li>
+  <li><%= link_to "Destroy book", author_path(@author), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>

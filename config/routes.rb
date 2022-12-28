@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :reviews
   devise_for :users
-  root "authors#index"
-
   # resource:author
    resources :authors
+
+  root "authors#index"
 
 
    devise_scope :user do

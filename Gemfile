@@ -31,6 +31,7 @@ gem "jbuilder"
 
 gem "devise", "~> 4.8"
 
+gem "cancan"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -75,4 +76,4 @@ group :test do
   gem "webdrivers"
 end
 
-gem "devise", "~> 4.8"
+# gem "devise", "~> 4.8"

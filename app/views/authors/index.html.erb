@@ -3,20 +3,28 @@
 <ul>
   <% @author.each do |authors| %>
     <li>
-      <h1> Book name:<br><%= authors.bookname %></h1><br>
-      <br>
-     <h2> Author name:<br> <%= authors.authorname%></h2><br>
+      <h1> Book name:</h1><h4><%= authors.bookname %></h4><br>
+      
+     <h2> Author name:</h2><br><h4> <%= authors.authorname%></h4><br>
     </li>
-    <br>
     <li>
-      <h4>Book image</h4>
-      <%= image_tag(url_for(authors.image)) %>
+    
+  <div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="<%= (url_for(authors.image))%>" alt="Good">
+  <div class="card-body">
+    <h5 class="card-title">images</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+    <a href="/authors/1" class="btn btn-primary">Go to book</a>
+  </div>
+</div>
+
     </li>
     
-
-  <% end %>
-
 </ul>
+  <% end %>
+    
+
 
 <%= link_to "Create a new book", "/authors/new" %>
 <br>
