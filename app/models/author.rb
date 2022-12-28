@@ -1,5 +1,7 @@
 class Author < ApplicationRecord
 	has_one_attached :image
-  # validates :image, presence: true
-  # validates :photos, presence: true
+    has_many :reviews
+    belongs_to :user,:optional=>true
+    belongs_to :category,:optional=>true
+  
 end
