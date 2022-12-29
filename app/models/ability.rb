@@ -9,7 +9,7 @@ class Ability
       if user.admin?
         can :manage, :all
       elsif user.author?
-        can :manage, :all
+        can :read, :author
        else 
         can :read, :all
       end
